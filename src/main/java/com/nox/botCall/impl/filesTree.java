@@ -1,10 +1,10 @@
-package com.nox.functionality.impl;
+package com.nox.botCall.impl;
 
-import com.nox.functionality.inteface.strFunctions;
+import com.nox.botCall.inteface.botCall;
 import java.io.File;
 
 
-public class filesTree implements strFunctions {
+public class filesTree implements botCall {
     String result = new String();
 
     public String getResult() {

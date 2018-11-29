@@ -1,13 +1,12 @@
 package com.nox.telegram;
 
-import com.nox.functionality.impl.fileLastModified;
-import com.nox.functionality.impl.filesTree;
+import com.nox.botCall.impl.fileLastModified;
+import com.nox.botCall.impl.filesTree;
+import com.nox.botCall.stringFunctionsChooser;
 import org.telegram.telegrambots.api.methods.send.SendMessage;
 import org.telegram.telegrambots.api.objects.Update;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
-
-import java.util.logging.Level;
 
 public class Bot extends TelegramLongPollingBot {
 
@@ -24,17 +23,7 @@ public class Bot extends TelegramLongPollingBot {
             String message_text = update.getMessage().getText();
             long chat_id = update.getMessage().getChatId();
 
-            if ("/help".equals(message_text)) {
-                message_text = "Hello, chummer";
-            }
-            else if ("/tree".equals(message_text)){
-                filesTree ft = new filesTree();
-                message_text = ft.getResult();
-            }
-            else if ("/when_log_scribus".equals(message_text)){
-                fileLastModified lm = new fileLastModified();
-                message_text = lm.getResult();
-            }
+            message_text = stringFunctionsChooser.chooseFunction(message_text);
             SendMessage message = new SendMessage() // Create a message object object
                     .setChatId(chat_id)
                     .setText(message_text);
@@ -46,7 +35,23 @@ public class Bot extends TelegramLongPollingBot {
         }
     }
 
+    /**
+     * Метод возвращает имя бота, указанное при регистрации.
+     * @return имя бота
+     */
+    @Override
+    public String getBotUsername() {
+        return "";
+    }
 
+    /**
+     * Метод возвращает token бота для связи с сервером Telegram
+     * @return token для бота
+     */
+    @Override
+    public String getBotToken() {
+        return "";
+    }
 
 
 

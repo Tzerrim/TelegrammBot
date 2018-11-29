@@ -1,11 +1,11 @@
-package com.nox.functionality.impl;
+package com.nox.botCall.impl;
 
-import com.nox.functionality.inteface.strFunctions;
+import com.nox.botCall.inteface.botCall;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 
-public class fileLastModified implements strFunctions {
+public class fileLastModified implements botCall {
 
     String result = new String();
 

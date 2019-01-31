@@ -1,18 +1,26 @@
-package com.nox.main;
+package main;
 
-import com.nox.telegram.Bot;
+import Telegram.Bot;
 import org.telegram.telegrambots.ApiContextInitializer;
-import org.telegram.telegrambots.TelegramBotsApi;
-import org.telegram.telegrambots.exceptions.TelegramApiException;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+
 public class main {
+
+    static Logger logger =   LogManager.getLogger(main.class);
     public static void main(String[] args) {
-        // Инициализруем Api Context
+
+
+        // Initialize Api Context
         ApiContextInitializer.init();
 
         // Instantiate Telegram Bots API
         TelegramBotsApi botsApi = new TelegramBotsApi();
 
-        // Регистрируем нашего bot
+        // Register our bot
         try {
             botsApi.registerBot(new Bot());
         } catch (TelegramApiException e) {

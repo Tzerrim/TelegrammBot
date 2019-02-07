@@ -14,17 +14,23 @@ public class main {
     public static void main(String[] args) {
 
 
-        // Initialize Api Context
-        ApiContextInitializer.init();
+        if ( args.length < 2 || args.length > 2) {
 
-        // Instantiate Telegram Bots API
-        TelegramBotsApi botsApi = new TelegramBotsApi();
-
-        // Register our bot
-        try {
-            botsApi.registerBot(new Bot());
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
         }
+        else {
+            // Initialize Api Context
+            ApiContextInitializer.init();
+
+            // Instantiate Telegram Bots API
+            TelegramBotsApi botsApi = new TelegramBotsApi();
+
+            // Register our bot
+            try {
+                botsApi.registerBot(new Bot(args[0], args[1]));
+            } catch (TelegramApiException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 }

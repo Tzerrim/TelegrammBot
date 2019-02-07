@@ -13,11 +13,13 @@ public class Bot extends TelegramLongPollingBot {
 
     private Logger LOG =  LogManager.getLogger(Bot.class.getName());
 
+    private String BotName;
+    private String BotToken;
 
-
-
-
-
+    public Bot (String BotName, String BotToken){
+        this.BotName = BotName;
+        this.BotToken = BotToken;
+    }
     @Override
     public void onUpdateReceived(Update update) {
         LOG.info("onUpdateReceived");
@@ -48,7 +50,7 @@ public class Bot extends TelegramLongPollingBot {
      */
     @Override
     public String getBotUsername() {
-        return BOT_NAME;
+        return this.BotName;
     }
 
     /**
@@ -57,6 +59,6 @@ public class Bot extends TelegramLongPollingBot {
      */
     @Override
     public String getBotToken() {
-        return BOT_TOKEN;
+        return this.BotToken;
     }
 }

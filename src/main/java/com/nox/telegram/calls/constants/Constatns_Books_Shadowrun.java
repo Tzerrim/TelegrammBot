@@ -1,4 +1,4 @@
-package Telegram.calls.constants;
+package com.nox.telegram.calls.constants;
 
 public class Constatns_Books_Shadowrun {
 

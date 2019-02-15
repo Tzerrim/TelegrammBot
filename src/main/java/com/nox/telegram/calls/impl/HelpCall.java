@@ -1,9 +1,7 @@
-package Telegram.calls.impl;
+package com.nox.telegram.calls.impl;
 
-import Telegram.calls.api.Call;
-import Telegram.calls.constants.Constants;
-
-import java.util.Map;
+import com.nox.telegram.calls.api.Call;
+import com.nox.telegram.calls.constants.Constants;
 
 public class HelpCall implements Call {
     String result = new String();

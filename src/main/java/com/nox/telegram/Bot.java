@@ -1,7 +1,6 @@
-package Telegram;
+package com.nox.telegram;
 
-import Telegram.calls.CallProcessor;
-import org.apache.logging.log4j.*;
+import com.nox.telegram.calls.CallProcessor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;

@@ -1,6 +1,6 @@
-package main;
+package com.nox.main;
 
-import Telegram.Bot;
+import com.nox.telegram.Bot;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;

@@ -1,9 +1,9 @@
-package Telegram.calls;
+package com.nox.telegram.calls;
 
-import Telegram.calls.api.Call;
+import com.nox.telegram.calls.api.Call;
 
-import static Telegram.calls.constants.Constants.CALLS;
-import static Telegram.calls.constants.Constants.NO_FUNCTION_MESSAGE;
+import static com.nox.telegram.calls.constants.Constants.CALLS;
+import static com.nox.telegram.calls.constants.Constants.NO_FUNCTION_MESSAGE;
 
 public class CallProcessor {
     public static String ProcessCall(String request) {

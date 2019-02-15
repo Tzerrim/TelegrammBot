@@ -1,14 +1,14 @@
-package Telegram.calls.constants;
+package com.nox.telegram.calls.constants;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import Telegram.calls.api.Call;
-import Telegram.calls.impl.BooksCall;
-import Telegram.calls.impl.Games;
-import Telegram.calls.impl.HelpCall;
-import Telegram.calls.impl.RandomQuoteCall;
+import com.nox.telegram.calls.api.Call;
+import com.nox.telegram.calls.impl.BooksCall;
+import com.nox.telegram.calls.impl.Games;
+import com.nox.telegram.calls.impl.HelpCall;
+import com.nox.telegram.calls.impl.RandomQuoteCall;
 
 public class Constants {
     public static final String NO_FUNCTION_MESSAGE = "Ублюдок, мать твою! Что херню ты опять написал?";

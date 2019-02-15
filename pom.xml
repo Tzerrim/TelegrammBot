@@ -57,7 +57,7 @@
                     <assembleDirectory>target</assembleDirectory>
                     <programs>
                         <program>
-                            <mainClass>main.main</mainClass>
+                            <mainClass>com.nox.main.main</mainClass>
                             <name>Bot</name>
                         </program>
                     </programs>

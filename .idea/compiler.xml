@@ -9,5 +9,8 @@
         <module name="TelegrammBot" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="TelegrammBot" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

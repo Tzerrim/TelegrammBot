@@ -12,7 +12,7 @@ INSERT IGNORE INTO telegram_bot_zathras.books VALUES (4, 'Ultimate Combat', 'Boo
 INSERT IGNORE INTO telegram_bot_zathras.books VALUES (5, 'Advanced Race Guide', 'Books about races', 2 );
 INSERT IGNORE INTO telegram_bot_zathras.books VALUES (6, 'Ultimate Equipment', 'Book about equipment', 2 );
 INSERT IGNORE INTO telegram_bot_zathras.books VALUES (7, 'Advanced Class Guide', 'Books about classes, hybrid classes', 2 );
-INSERT IGNORE INTO telegram_bot_zathras.books VALUES (8, 'Occult Adventures', 'Book about occuls, spirit classes', 2 );
+INSERT IGNORE INTO telegram_bot_zathras.books VALUES (8, 'Occult Adventures', 'Book about occultism, spirit classes', 2 );
 INSERT IGNORE INTO telegram_bot_zathras.books VALUES (9, 'Ultimate Intrigue', 'Book for faces and social', 2 );
 
 -- Shadowrun books
@@ -42,5 +42,7 @@ INSERT IGNORE INTO telegram_bot_zathras.books VALUES (31, 'The Complete Trog', '
 
 -- Players
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (1, 'Stepan Rapinchuk', 'Danstep' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Roman Timosuk', 'Ororororme' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, '', '' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Roman Timosuk', 'Orome' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, 'Kirill Kravets', 'VJ Ray' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (4, 'Ashley Holmes', 'Ash' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (5, 'Tatsiana Rudaja', 'Itazis' );

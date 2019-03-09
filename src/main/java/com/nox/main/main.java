@@ -13,22 +13,27 @@ public class main {
     static Logger logger =   LogManager.getLogger(main.class);
     public static void main(String[] args) {
 
-
         if ( args.length < 2 || args.length > 2) {
-
+            logger.info("Wrong input data");
         }
         else {
             // Initialize Api Context
             ApiContextInitializer.init();
+            logger.info("Initialize Api Context");
 
             // Instantiate Telegram Bots API
             TelegramBotsApi botsApi = new TelegramBotsApi();
+            logger.info("Instantiate Telegram Bots API");
 
             // Register our bot
             try {
+                logger.info("Bot name: "+ args[0]);
+                logger.info("Bot ID: "+ args[1]);
                 botsApi.registerBot(new Bot(args[0], args[1]));
+                logger.info("Register bot");
             } catch (TelegramApiException e) {
-                e.printStackTrace();
+                logger.error(e.getMessage());
+//                e.printStackTrace();
             }
         }
 

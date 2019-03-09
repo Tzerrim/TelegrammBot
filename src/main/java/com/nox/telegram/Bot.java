@@ -10,7 +10,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class Bot extends TelegramLongPollingBot {
 
-    private Logger LOG =  LogManager.getLogger(Bot.class.getName());
+    private Logger logger =  LogManager.getLogger(Bot.class);
 
     private String BotName;
     private String BotToken;
@@ -21,8 +21,8 @@ public class Bot extends TelegramLongPollingBot {
     }
     @Override
     public void onUpdateReceived(Update update) {
-        LOG.info("onUpdateReceived");
-        LOG.info(update.getMessage().getText() );
+        logger.info("onUpdateReceived");
+        logger.info(update.getMessage().getText() );
         String responseText = "";
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message_text = update.getMessage().getText();

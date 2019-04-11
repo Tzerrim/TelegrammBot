@@ -1,11 +1,25 @@
 package com.nox.database.entity;
 
-public class booksEntity {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "books")
+public class book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "description")
     private String description;
-    private int tabletops_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tabletops_id")
+    private tabletop tabletop;
+
 
     public int getId() {
         return id;
@@ -31,11 +45,11 @@ public class booksEntity {
         this.description = description;
     }
 
-    public int getTabletops_id() {
-        return tabletops_id;
+    public com.nox.database.entity.tabletop getTabletop() {
+        return tabletop;
     }
 
-    public void setTabletops_id(int tabletops_id) {
-        this.tabletops_id = tabletops_id;
+    public void setTabletop(com.nox.database.entity.tabletop tabletop) {
+        this.tabletop = tabletop;
     }
 }

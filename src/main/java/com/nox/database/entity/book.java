@@ -20,6 +20,13 @@ public class book {
     @JoinColumn(name = "tabletops_id")
     private tabletop tabletop;
 
+    public book (){}
+
+    public book( int id, String name, String description){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
 
     public int getId() {
         return id;
@@ -51,5 +58,15 @@ public class book {
 
     public void setTabletop(com.nox.database.entity.tabletop tabletop) {
         this.tabletop = tabletop;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Book entity: ").append("\n");
+        sb.append("id: ").append(this.id).append("\n");
+        sb.append("name: ").append(this.name).append("\n");
+        sb.append("description: ").append(this.description).append("\n");
+        return sb.toString();
     }
 }

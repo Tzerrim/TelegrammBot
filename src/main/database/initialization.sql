@@ -44,5 +44,10 @@ INSERT IGNORE INTO telegram_bot_zathras.books VALUES (31, 'The Complete Trog', '
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (1, 'Stepan Rapinchuk', 'Danstep' );
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Roman Timosuk', 'Orome' );
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, 'Kirill Kravets', 'VJ Ray' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (4, 'Ashley Holmes', 'Ash' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (4, 'Ashley Holmes', 'Ashley' );
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (5, 'Tatsiana Rudaja', 'Itazis' );
+
+-- Characters
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (1, 'Marcus', 'Magus dhampir', 1, 2  );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Arvin Yrolem', 'Tiefling infernal sorcerer', 2, 2  );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, 'Wilheml', 'Human oracle of life', 3, 2  );

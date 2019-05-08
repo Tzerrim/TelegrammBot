@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "books")
-public class book {
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,11 +18,11 @@ public class book {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tabletops_id")
-    private tabletop tabletop;
+    private Tabletop tabletop;
 
-    public book (){}
+    public Book(){}
 
-    public book( int id, String name, String description){
+    public Book(int id, String name, String description){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -52,11 +52,11 @@ public class book {
         this.description = description;
     }
 
-    public com.nox.database.entity.tabletop getTabletop() {
+    public Tabletop getTabletop() {
         return tabletop;
     }
 
-    public void setTabletop(com.nox.database.entity.tabletop tabletop) {
+    public void setTabletop(Tabletop tabletop) {
         this.tabletop = tabletop;
     }
 

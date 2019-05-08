@@ -1,6 +1,6 @@
 package com.nox.database.entity;
 
-public class player {
+public class Player {
 
     private int id;
     private String name;

@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "tabletops")
-public class tabletop {
+public class Tabletop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,21 +18,21 @@ public class tabletop {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "tabletop", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<book> books;
+    @OneToMany(mappedBy = "Tabletop", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Book> Books;
 
-    public tabletop(){}
+    public Tabletop(){}
 
-    public tabletop(int id, String name, String description) {
+    public Tabletop(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.books = new ArrayList<book>();
+        this.Books = new ArrayList<Book>();
     }
 
-    public void addBook( book book){
+    public void addBook( Book book){
         book.setTabletop(this);
-        books.add(book);
+        Books.add(book);
     }
 
     public int getId() {
@@ -59,12 +59,12 @@ public class tabletop {
         this.description = description;
     }
 
-    public List<book> getBooks() {
-        return books;
+    public List<Book> getBooks() {
+        return Books;
     }
 
-    public void setBooks(List<book> books) {
-        this.books = books;
+    public void setBooks(List<Book> Books) {
+        this.Books = Books;
     }
 
     @Override

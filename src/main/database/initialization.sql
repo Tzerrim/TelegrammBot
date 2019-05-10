@@ -48,6 +48,6 @@ INSERT IGNORE INTO telegram_bot_zathras.players VALUES (4, 'Ashley Holmes', 'Ash
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (5, 'Tatsiana Rudaja', 'Itazis' );
 
 -- Characters
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (1, 'Marcus', 'Magus dhampir', 1, 2  );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Arvin Yrolem', 'Tiefling infernal sorcerer', 2, 2  );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, 'Wilheml', 'Human oracle of life', 3, 2  );
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (1, 'Marcus', 'Magus dhampir', 1, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (2, 'Arvin Yrolem', 'Tiefling infernal sorcerer', 2, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (3, 'Wilheml', 'Human oracle of life', 3, 2);

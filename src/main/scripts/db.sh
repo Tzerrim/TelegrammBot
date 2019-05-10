@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# User: nox PASSWORD: password
 
 # Create schema and tables
-mysql  mysql -u nox -p <  ../database/creation.sql
+mysql  --user=root --password="1366613Sudo" < ../database/creation.sql
 
 # Fill tables with initial data
-mysql  mysql -u nox -p <  ../database/initialization.sql
+mysql  --user=root --password="1366613Sudo"  < ../database/initialization.sql

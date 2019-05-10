@@ -1,4 +1,4 @@
-CREATE DATABASE telegram_bot_zathras;
+CREATE DATABASE IF NOT EXISTS telegram_bot_zathras;
 
 USE telegram_bot_zathras;
 

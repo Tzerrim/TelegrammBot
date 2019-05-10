@@ -6,9 +6,12 @@ import com.nox.database.entity.Tabletop;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
 
 public class HibernateSessionFactoryUtil {
+
     private static SessionFactory sessionFactory;
+    private static ServiceRegistry serviceRegistry;
 
     private HibernateSessionFactoryUtil() {}
 
@@ -18,12 +21,12 @@ public class HibernateSessionFactoryUtil {
                 Configuration configuration = new Configuration().configure();
 
                 configuration.addAnnotatedClass(Tabletop.class);
-                configuration.addAnnotatedClass(Book.class);
-                configuration.addAnnotatedClass(Player.class);
-                configuration.addAnnotatedClass(Character.class);
+//                configuration.addAnnotatedClass(Book.class);
+//                configuration.addAnnotatedClass(Player.class);
+//                configuration.addAnnotatedClass(Character.class);
 
-                StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
-                sessionFactory = configuration.buildSessionFactory(builder.build());
+                serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+                sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 
             } catch (Exception e) {
                e.printStackTrace();

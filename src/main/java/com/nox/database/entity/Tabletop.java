@@ -10,7 +10,8 @@ public class Tabletop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "id", updatable = false, nullable = false)
+    private Integer id;
 
     @Column(name = "name")
     private String name;
@@ -18,8 +19,7 @@ public class Tabletop {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "Tabletop", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Book> Books;
+//    private List<Book> Books;
 
     public Tabletop(){}
 
@@ -27,19 +27,18 @@ public class Tabletop {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.Books = new ArrayList<Book>();
     }
 
-    public void addBook( Book book){
-        book.setTabletop(this);
-        Books.add(book);
-    }
+//    public void addBook( Book book){
+//        book.setTabletop(this);
+//        Books.add(book);
+//    }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -59,13 +58,14 @@ public class Tabletop {
         this.description = description;
     }
 
-    public List<Book> getBooks() {
-        return Books;
-    }
+//    @OneToMany(targetEntity= Book.class, cascade = CascadeType.ALL, orphanRemoval = true)
+//    public List<Book> getBooks() {
+//        return Books;
+//    }
 
-    public void setBooks(List<Book> Books) {
-        this.Books = Books;
-    }
+//    public void setBooks(List<Book> Books) {
+//        this.Books = Books;
+//    }
 
     @Override
     public String toString(){

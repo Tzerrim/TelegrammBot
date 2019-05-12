@@ -21,7 +21,7 @@ public class HibernateSessionFactoryUtil {
                 Configuration configuration = new Configuration().configure();
 
                 configuration.addAnnotatedClass(Tabletop.class);
-//                configuration.addAnnotatedClass(Book.class);
+                configuration.addAnnotatedClass(Book.class);
 //                configuration.addAnnotatedClass(Player.class);
 //                configuration.addAnnotatedClass(Character.class);
 

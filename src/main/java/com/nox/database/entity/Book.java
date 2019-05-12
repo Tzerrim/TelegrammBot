@@ -16,6 +16,8 @@ public class Book {
     @Column(name = "description")
     private String description;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tabletops_id")
     private Tabletop tabletop;
 
     public Book(){}
@@ -51,11 +53,9 @@ public class Book {
     }
 
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "tabletops_id")
-//    public Tabletop getTabletop() {
-//        return tabletop;
-//    }
+    public Tabletop getTabletop() {
+        return tabletop;
+    }
 
     public void setTabletop(Tabletop tabletop) {
         this.tabletop = tabletop;

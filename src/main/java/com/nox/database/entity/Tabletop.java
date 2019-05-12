@@ -20,6 +20,8 @@ public class Tabletop {
     private String description;
 
 //    private List<Book> Books;
+    @OneToMany(targetEntity= Book.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Book> Books;
 
     public Tabletop(){}
 
@@ -29,10 +31,10 @@ public class Tabletop {
         this.description = description;
     }
 
-//    public void addBook( Book book){
-//        book.setTabletop(this);
-//        Books.add(book);
-//    }
+    public void addBook( Book book){
+        book.setTabletop(this);
+        Books.add(book);
+    }
 
     public Integer getId() {
         return id;
@@ -58,14 +60,14 @@ public class Tabletop {
         this.description = description;
     }
 
-//    @OneToMany(targetEntity= Book.class, cascade = CascadeType.ALL, orphanRemoval = true)
-//    public List<Book> getBooks() {
-//        return Books;
-//    }
 
-//    public void setBooks(List<Book> Books) {
-//        this.Books = Books;
-//    }
+    public List<Book> getBooks() {
+        return Books;
+    }
+
+    public void setBooks(List<Book> Books) {
+        this.Books = Books;
+    }
 
     @Override
     public String toString(){

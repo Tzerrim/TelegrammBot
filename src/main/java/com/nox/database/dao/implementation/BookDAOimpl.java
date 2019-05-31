@@ -39,7 +39,8 @@ public class BookDAOimpl implements BookDAO {
     }
 
     public List<Book> findAllBooks (){
-        List<Book> books = (List<Book>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From books").list();
+
+        List<Book> books = (List<Book>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" from Book").list();
         return books;
     }
 }

@@ -14,7 +14,7 @@ public class BookService {
 
     }
 
-    public Book findeBook(int id){
+    public Book findBook(int id){
         return bookDAO.findById(id);
     }
 

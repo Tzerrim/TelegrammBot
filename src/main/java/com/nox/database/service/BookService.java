@@ -14,7 +14,7 @@ public class BookService {
 
     }
 
-    public Book findBook(int id){
+    public Book findBookById(int id){
         return bookDAO.findById(id);
     }
 
@@ -34,4 +34,7 @@ public class BookService {
         return  bookDAO.findAllBooks();
     }
 
+    public List<Book> findBooksByTalbetops( String tabletopName){
+        return  bookDAO.findBooksByTalbetop(tabletopName);
+    }
 }

@@ -7,13 +7,16 @@ import java.util.List;
 
 public interface BookDAO {
 
-    public Book findById (int id);
-
     public void save (Book book);
 
     public void update (Book book);
 
     public void delete (Book book);
 
+    public Book findById (int id);
+
+    public List<Book> findBooksByTalbetop(String tabletopName);
+
     public List<Book> findAllBooks ();
+
 }

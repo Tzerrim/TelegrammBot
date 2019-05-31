@@ -22,12 +22,17 @@ public class BooksCall implements Call {
             BookService bookService = new BookService();
             List<Book> books = bookService.findAllBooks();
             result = books.stream()
-                    .map( n -> n.toString() )
+                    .map( n -> n.toDataString() )
                     .collect( Collectors.joining( "\n" ) );
         }
         else {
             if (Constants.PATHFINDER.equals(game.toLowerCase())) {
-                return Constants.BOOKS_LIST_PATHFINDER;
+
+                BookService bookService = new BookService();
+                List<Book> books = bookService.findBooksByTalbetops(Constants.PATHFINDER );
+                result = books.stream()
+                        .map( n -> n.toDataString() )
+                        .collect( Collectors.joining( "\n" ) );
             }
         }
         //result = "This is a BOOKS Function";

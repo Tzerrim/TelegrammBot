@@ -49,7 +49,6 @@ public class BookDAOimpl implements BookDAO {
 //        criteria.where()
 
         Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
-//                "SELECT * " +
                         "FROM Book " +
                         "WHERE tabletops_id = (" +
                         " SELECT id " +
@@ -62,7 +61,7 @@ public class BookDAOimpl implements BookDAO {
     }
 
     public List<Book> findAllBooks() {
-        List<Book> books = (List<Book>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" from Book").list();
+        List<Book> books = (List<Book>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Book").list();
         return books;
     }
 }

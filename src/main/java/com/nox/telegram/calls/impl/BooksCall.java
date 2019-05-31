@@ -23,19 +23,19 @@ public class BooksCall implements Call {
             List<Book> books = bookService.findAllBooks();
             result = books.stream()
                     .map( n -> n.toDataString() )
-                    .collect( Collectors.joining( "\n" ) );
+                    .collect( Collectors.joining( "\n --- \n" ) );
         }
         else {
+
             if (Constants.PATHFINDER.equals(game.toLowerCase())) {
 
                 BookService bookService = new BookService();
                 List<Book> books = bookService.findBooksByTalbetops(Constants.PATHFINDER );
                 result = books.stream()
                         .map( n -> n.toDataString() )
-                        .collect( Collectors.joining( "\n" ) );
+                        .collect( Collectors.joining( "\n --- \n"  ) );
             }
         }
-        //result = "This is a BOOKS Function";
         return result;
     }
 }

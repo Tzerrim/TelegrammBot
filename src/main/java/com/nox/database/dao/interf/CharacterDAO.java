@@ -15,5 +15,9 @@ public interface CharacterDAO {
 
     public void delete(Character character);
 
-    public List<Character> findAllTabletops();
+    public List<Character> findAllCharacters();
+
+    public List<Character> findCharactersByTalbetop(String tabletopName);
+
+    public List<Character> findCharactersByPlayer (String playerName);
 }

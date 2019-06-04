@@ -27,11 +27,6 @@ public class Constants {
     public static final String TAVELLER = "traveller";
     public static final String EARTH_DAWN = "eath_dawn";
 
-
-    public static final String BOOKS_LIST_PATHFINDER = "1. Core Rulebooks\n2. Pathfinder Advanced Players Guide\n" +
-            "3. Ultimate Magic\n4. Ultimate Combat\n5. Advanced Race Guide\n6. Advanced Class Guide\n7. Occult Adventures\n" +
-            "8. Ultimate Intrigue\n9. Ultimate Equipment";
-
     public static final Map<String, Call> CALLS ;
     public static final Map<String, String> DESCRIPTIONS;
     public static final List<String> GAMES;

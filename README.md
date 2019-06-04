@@ -24,4 +24,4 @@
 2. VK part: 
 * Get data from VK page and send it to Teletgam part
 * In future to post info on commynity wall
-3. DB part: Store data: tabletops, players, characters, books, book lists
+3. DB part: Store data: tabletops, players, characters, books, homerules

@@ -1,12 +1,28 @@
 package com.nox.database.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "characters")
 public class Character {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "description")
     private String description;
-    private int player_id;
-    private int tabletops_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "player_id")
+    private Player player;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tabletops_id")
+    private Tabletop tabletop;
 
     public int getId() {
         return id;
@@ -32,19 +48,30 @@ public class Character {
         this.description = description;
     }
 
-    public int getPlayer_id() {
-        return player_id;
+    public Player getPlayer() {
+        return player;
     }
 
-    public void setPlayer_id(int player_id) {
-        this.player_id = player_id;
+    public void setPlayer(Player player) {
+        this.player = player;
     }
 
-    public int getTabletops_id() {
-        return tabletops_id;
+    public Tabletop getTabletop() {
+        return tabletop;
     }
 
-    public void setTabletops_id(int tabletops_id) {
-        this.tabletops_id = tabletops_id;
+    public void setTabletop(Tabletop tabletop) {
+        this.tabletop = tabletop;
     }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Character entity: ").append("\n");
+        sb.append("id: ").append(this.id).append("\n");
+        sb.append("name: ").append(this.name).append("\n");
+        sb.append("description: ").append(this.description).append("\n");
+        return sb.toString();
+    }
+
 }

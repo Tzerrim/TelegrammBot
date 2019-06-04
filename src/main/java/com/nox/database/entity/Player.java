@@ -1,10 +1,24 @@
 package com.nox.database.entity;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "players")
 public class Player {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "description")
     private String description;
+
+    @OneToMany(targetEntity= Character.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Character> Characters;
 
     public int getId() {
         return id;
@@ -28,5 +42,23 @@ public class Player {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<Character> getCharacters() {
+        return Characters;
+    }
+
+    public void setCharacters(List<Character> characters) {
+        Characters = characters;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Player entity: ").append("\n");
+        sb.append("id: ").append(this.id).append("\n");
+        sb.append("name: ").append(this.name).append("\n");
+        sb.append("description: ").append(this.description).append("\n");
+        return sb.toString();
     }
 }

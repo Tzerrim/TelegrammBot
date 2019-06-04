@@ -22,8 +22,8 @@ public class HibernateSessionFactoryUtil {
 
                 configuration.addAnnotatedClass(Tabletop.class);
                 configuration.addAnnotatedClass(Book.class);
-//                configuration.addAnnotatedClass(Player.class);
-//                configuration.addAnnotatedClass(Character.class);
+                configuration.addAnnotatedClass(Player.class);
+                configuration.addAnnotatedClass(Character.class);
 
                 serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);

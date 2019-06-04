@@ -16,4 +16,6 @@ public interface TabletopDAO {
     public void delete(Tabletop tabletop);
 
     public List<Tabletop> findAllTabletops();
+
+    public Tabletop findByName(String name);
 }

@@ -3,13 +3,10 @@ package com.nox.database.dao.implementation;
 import com.nox.database.HibernateSessionFactoryUtil;
 import com.nox.database.dao.interf.BookDAO;
 import com.nox.database.entity.Book;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
 
 public class BookDAOimpl implements BookDAO {
@@ -50,10 +47,10 @@ public class BookDAOimpl implements BookDAO {
 
         Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
                         "FROM Book " +
-                        "WHERE tabletops_id = (" +
-                        " SELECT id " +
-                        "   FROM Tabletop " +
-                        "   WHERE name = :tabletopName)"
+                        "WHERE tabletops_id = ( " +
+                            "SELECT id " +
+                            "FROM Tabletop " +
+                            "WHERE name = :tabletopName)"
         );
         query.setParameter("tabletopName", tabletopName);
         List<Book> books = ( List<Book>) query.list();

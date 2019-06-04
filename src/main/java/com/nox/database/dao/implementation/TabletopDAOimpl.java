@@ -10,10 +10,6 @@ import java.util.List;
 
 public class TabletopDAOimpl implements TabletopDAO {
 
-    public Tabletop findById (int id){
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Tabletop.class, id);
-    }
-
     public void save(Tabletop tabletop) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
@@ -38,8 +34,16 @@ public class TabletopDAOimpl implements TabletopDAO {
         session.close();
     }
 
+    public Tabletop findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Tabletop.class, id);
+    }
+
     public List<Tabletop> findAllTabletops (){
         List<Tabletop> tabletops = (List<Tabletop>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From tabletops").list();
         return tabletops;
+    }
+
+    public Tabletop findByName (String name){
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Tabletop.class, name);
     }
 }

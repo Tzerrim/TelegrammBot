@@ -14,8 +14,8 @@ public interface PlayerDAO {
 
     public void delete(Player player);
 
-    public Book findById(int id);
+    public Player findById(int id);
 
-    public List<Book> findAllPlayers();
+    public List<Player> findAllPlayers();
 
 }

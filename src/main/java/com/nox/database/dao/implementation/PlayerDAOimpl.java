@@ -2,63 +2,47 @@ package com.nox.database.dao.implementation;
 
 import com.nox.database.HibernateSessionFactoryUtil;
 import com.nox.database.dao.interf.BookDAO;
+import com.nox.database.dao.interf.PlayerDAO;
 import com.nox.database.entity.Book;
+import com.nox.database.entity.Player;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class PlayerDAOimpl implements BookDAO {
+public class PlayerDAOimpl implements PlayerDAO {
 
-    public void save(Book book) {
+    public void save(Player player) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(book);
+        session.save(player);
         tx1.commit();
         session.close();
     }
 
-    public void update(Book book) {
+    public void update(Player player) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(book);
+        session.update(player);
         tx1.commit();
         session.close();
     }
 
-    public void delete(Book book) {
+    public void delete(Player player) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(book);
+        session.delete(player);
         tx1.commit();
         session.close();
     }
 
-    public Book findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Book.class, id);
+    public Player findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Player.class, id);
     }
 
-    public List<Book> findBooksByTalbetop(String tabletopName) {
-//        CriteriaBuilder builder = HibernateSessionFactoryUtil.getSessionFactory().openSession().getCriteriaBuilder();
-//        CriteriaQuery<Book> criteria = builder.createQuery(Book.class);
-//        criteria.from(Book.class);
-//        criteria.where()
-
-        Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
-                        "FROM Book " +
-                        "WHERE tabletops_id = (" +
-                        " SELECT id " +
-                        "   FROM Tabletop " +
-                        "   WHERE name = :tabletopName)"
-        );
-        query.setParameter("tabletopName", tabletopName);
-        List<Book> books = ( List<Book>) query.list();
-        return books;
-    }
-
-    public List<Book> findAllBooks() {
-        List<Book> books = (List<Book>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Book").list();
-        return books;
+    public List<Player> findAllPlayers() {
+        List<Player> players = (List<Player>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Player").list();
+        return players;
     }
 }

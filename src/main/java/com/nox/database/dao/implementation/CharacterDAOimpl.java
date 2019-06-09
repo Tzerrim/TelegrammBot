@@ -2,6 +2,7 @@ package com.nox.database.dao.implementation;
 
 import com.nox.database.HibernateSessionFactoryUtil;
 import com.nox.database.dao.interf.BookDAO;
+import com.nox.database.dao.interf.CharacterDAO;
 import com.nox.database.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -9,56 +10,64 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class CharacterDAOimpl implements BookDAO {
+public class CharacterDAOimpl implements CharacterDAO {
 
-    public void save(Book book) {
+    public void save(Character character) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.save(book);
+        session.save(character);
         tx1.commit();
         session.close();
     }
 
-    public void update(Book book) {
+    public void update(Character character) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.update(book);
+        session.update(character);
         tx1.commit();
         session.close();
     }
 
-    public void delete(Book book) {
+    public void delete(Character character) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
-        session.delete(book);
+        session.delete(character);
         tx1.commit();
         session.close();
     }
 
-    public Book findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Book.class, id);
+    public Character findById(int id) {
+        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Character.class, id);
     }
 
-    public List<Book> findBooksByTalbetop(String tabletopName) {
-//        CriteriaBuilder builder = HibernateSessionFactoryUtil.getSessionFactory().openSession().getCriteriaBuilder();
-//        CriteriaQuery<Book> criteria = builder.createQuery(Book.class);
-//        criteria.from(Book.class);
-//        criteria.where()
-
+    public List<Character> findCharactersByTalbetop(String tabletopName) {
         Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
-                        "FROM Book " +
+                        "FROM Character " +
                         "WHERE tabletops_id = (" +
                         " SELECT id " +
                         "   FROM Tabletop " +
                         "   WHERE name = :tabletopName)"
         );
         query.setParameter("tabletopName", tabletopName);
-        List<Book> books = ( List<Book>) query.list();
-        return books;
+        List<Character> characters = ( List<Character>) query.list();
+        return characters;
     }
 
-    public List<Book> findAllBooks() {
-        List<Book> books = (List<Book>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Book").list();
-        return books;
+    public List<Character> findCharactersByPlayer(String playerName) {
+        Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
+                "FROM Character " +
+                        "WHERE player_id = (" +
+                        " SELECT id " +
+                        "   FROM Player " +
+                        "   WHERE name = :playerName)"
+        );
+        query.setParameter("playerName", playerName);
+        List<Character> characters = ( List<Character>) query.list();
+        return characters;
+    }
+
+    public List<Character> findAllCharacters() {
+        List<Character> characters = (List<Character>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Character").list();
+        return characters;
     }
 }

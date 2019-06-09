@@ -1,13 +1,14 @@
 package com.nox.database.dao.implementation;
 
 import com.nox.database.HibernateSessionFactoryUtil;
+import com.nox.database.dao.interf.BookDAO;
 import com.nox.database.dao.interf.CharacterDAO;
+import com.nox.database.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.List;
-
 
 public class CharacterDAOimpl implements CharacterDAO {
 
@@ -39,34 +40,34 @@ public class CharacterDAOimpl implements CharacterDAO {
         return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Character.class, id);
     }
 
-    public List<Character> findAllCharacters() {
-        List<Character> characters = (List<Character>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Character").list();
-        return characters;
-    }
-
-    public List<Character> findCharactersByTalbetop (String tabletopName) {
+    public List<Character> findCharactersByTalbetop(String tabletopName) {
         Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
-                "FROM Character " +
-                        "WHERE tabletops_id = ( " +
-                        "SELECT id " +
-                        "FROM Tabletop " +
-                        "WHERE name = :tabletopName)"
+                        "FROM Character " +
+                        "WHERE tabletops_id = (" +
+                        " SELECT id " +
+                        "   FROM Tabletop " +
+                        "   WHERE name = :tabletopName)"
         );
         query.setParameter("tabletopName", tabletopName);
         List<Character> characters = ( List<Character>) query.list();
         return characters;
     }
 
-    public List<Character> findCharactersByPlayer (String playerName) {
+    public List<Character> findCharactersByPlayer(String playerName) {
         Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
                 "FROM Character " +
-                        "WHERE player_id = ( " +
-                        "SELECT id " +
-                        "FROM Player " +
-                        "WHERE name = :playerName)"
+                        "WHERE player_id = (" +
+                        " SELECT id " +
+                        "   FROM Player " +
+                        "   WHERE name = :playerName)"
         );
         query.setParameter("playerName", playerName);
         List<Character> characters = ( List<Character>) query.list();
+        return characters;
+    }
+
+    public List<Character> findAllCharacters() {
+        List<Character> characters = (List<Character>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Character").list();
         return characters;
     }
 }

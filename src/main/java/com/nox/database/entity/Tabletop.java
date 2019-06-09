@@ -1,7 +1,6 @@
 package com.nox.database.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,9 +18,11 @@ public class Tabletop {
     @Column(name = "description")
     private String description;
 
-//    private List<Book> Books;
     @OneToMany(targetEntity= Book.class, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Book> Books;
+
+    @OneToMany(targetEntity= Houserule.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Houserule> houserules;
 
     public Tabletop(){}
 
@@ -67,6 +68,14 @@ public class Tabletop {
 
     public void setBooks(List<Book> Books) {
         this.Books = Books;
+    }
+
+    public List<Houserule> getHouserules() {
+        return houserules;
+    }
+
+    public void setHouserules(List<Houserule> houserules) {
+        this.houserules = houserules;
     }
 
     @Override

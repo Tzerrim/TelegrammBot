@@ -36,8 +36,8 @@ CREATE TABLE characters (
     PRIMARY KEY (id)
 );
 
--- NOTE: if "tabletops_id" is NULL - means that this homerule is universal to all tabletops
-CREATE TABLE homerules {
+-- NOTE: if "tabletops_id" is NULL - means that this houserules is universal to all tabletops
+CREATE TABLE houserules {
     id INTEGER NOT NULL AUTO_INCREMENT,
     description VARCHAR(2000) NOT NULL,
     tabletops_id INTEGER NULL,

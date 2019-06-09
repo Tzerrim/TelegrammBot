@@ -1,6 +1,7 @@
 package com.nox.database;
 
 import com.nox.database.entity.Book;
+import com.nox.database.entity.Houserule;
 import com.nox.database.entity.Player;
 import com.nox.database.entity.Tabletop;
 import org.hibernate.SessionFactory;
@@ -24,6 +25,7 @@ public class HibernateSessionFactoryUtil {
                 configuration.addAnnotatedClass(Book.class);
                 configuration.addAnnotatedClass(Player.class);
                 configuration.addAnnotatedClass(Character.class);
+                configuration.addAnnotatedClass(Houserule.class);
 
                 serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
                 sessionFactory = configuration.buildSessionFactory(serviceRegistry);

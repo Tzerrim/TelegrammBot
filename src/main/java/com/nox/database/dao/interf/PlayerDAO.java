@@ -16,6 +16,6 @@ public interface PlayerDAO {
 
     public Book findById(int id);
 
-    public List<Book> findAllBooks();
+    public List<Book> findAllPlayers();
 
 }

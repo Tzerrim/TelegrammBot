@@ -1,4 +1,4 @@
-package com.nox.database.dao.implemenplayerstation;
+package com.nox.database.dao.implementation;
 
 import com.nox.database.HibernateSessionFactoryUtil;
 import com.nox.database.dao.interf.TabletopDAO;

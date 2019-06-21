@@ -18,7 +18,7 @@ public class Player {
     private String description;
 
     @OneToMany(targetEntity= Character.class, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Character> Characters;
+    private List<Character> characters;
 
     public int getId() {
         return id;
@@ -45,11 +45,11 @@ public class Player {
     }
 
     public List<Character> getCharacters() {
-        return Characters;
+        return characters;
     }
 
     public void setCharacters(List<Character> characters) {
-        Characters = characters;
+        this.characters = characters;
     }
 
     @Override

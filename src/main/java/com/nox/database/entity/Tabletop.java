@@ -19,10 +19,13 @@ public class Tabletop {
     private String description;
 
     @OneToMany(targetEntity= Book.class, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Book> Books;
+    private List<Book> books;
 
     @OneToMany(targetEntity= Houserule.class, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Houserule> houserules;
+
+    @OneToMany(targetEntity= Character.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Character> characters;
 
     public Tabletop(){}
 
@@ -34,7 +37,7 @@ public class Tabletop {
 
     public void addBook( Book book){
         book.setTabletop(this);
-        Books.add(book);
+        books.add(book);
     }
 
     public Integer getId() {
@@ -63,11 +66,11 @@ public class Tabletop {
 
 
     public List<Book> getBooks() {
-        return Books;
+        return books;
     }
 
     public void setBooks(List<Book> Books) {
-        this.Books = Books;
+        this.books = Books;
     }
 
     public List<Houserule> getHouserules() {
@@ -78,6 +81,14 @@ public class Tabletop {
         this.houserules = houserules;
     }
 
+    public List<Character> getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(List<Character> characters) {
+        this.characters = characters;
+    }
+
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
@@ -85,6 +96,13 @@ public class Tabletop {
         sb.append("id: ").append(this.id).append("\n");
         sb.append("name: ").append(this.name).append("\n");
         sb.append("description: ").append(this.description).append("\n");
+        return sb.toString();
+    }
+
+    public String toDataString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.name).append("\n");
+        sb.append(this.description).append("\n");
         return sb.toString();
     }
 }

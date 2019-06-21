@@ -39,7 +39,7 @@ public class TabletopDAOimpl implements TabletopDAO {
     }
 
     public List<Tabletop> findAllTabletops (){
-        List<Tabletop> tabletops = (List<Tabletop>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From tabletops").list();
+        List<Tabletop> tabletops = (List<Tabletop>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Tabletop").list();
         return tabletops;
     }
 }

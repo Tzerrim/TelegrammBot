@@ -15,7 +15,7 @@ public class TabletopService {
 
     }
 
-    public Tabletop findeTabletop(int id){
+    public Tabletop findTabletop(int id){
         return TabletopDAO.findById(id);
     }
 

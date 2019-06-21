@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import com.nox.telegram.calls.api.Call;
 import com.nox.telegram.calls.impl.BooksCall;
-import com.nox.telegram.calls.impl.Games;
+import com.nox.telegram.calls.impl.Tabletops;
 import com.nox.telegram.calls.impl.HelpCall;
 import com.nox.telegram.calls.impl.RandomQuoteCall;
 
@@ -37,7 +37,7 @@ public class Constants {
         CALLS.put(HELP, (Call) new HelpCall());
         CALLS.put(BOOKS, (Call) new BooksCall());
         CALLS.put(RANDOM_QUOTE, (Call) new RandomQuoteCall());
-        CALLS.put(GAME_LIST, (Call) new Games());
+        CALLS.put(GAME_LIST, (Call) new Tabletops());
 
         GAMES = new ArrayList<String>();
         GAMES.add(PATHFINDER);

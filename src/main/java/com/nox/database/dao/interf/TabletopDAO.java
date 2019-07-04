@@ -15,6 +15,8 @@ public interface TabletopDAO {
 
     public Tabletop findById(int id);
 
+    public Tabletop findByName(String name);
+
     public List<Tabletop> findAllTabletops();
 
     public Tabletop findByName(String name);

@@ -15,7 +15,7 @@ public class TabletopService {
 
     }
 
-    public Tabletop findeTabletop(int id){
+    public Tabletop findTabletop(int id){
         return TabletopDAO.findById(id);
     }
 
@@ -34,5 +34,10 @@ public class TabletopService {
     public List<Tabletop> findAllTabletops(){
         return  TabletopDAO.findAllTabletops();
     }
+
+    public Tabletop findTabletopByName(String name){
+        return TabletopDAO.findByName(name);
+    }
+
 
 }

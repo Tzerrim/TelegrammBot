@@ -4,6 +4,7 @@ import com.nox.database.entity.Book;
 import com.nox.database.entity.Houserule;
 import com.nox.database.entity.Player;
 import com.nox.database.entity.Tabletop;
+import com.nox.database.entity.Character;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

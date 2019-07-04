@@ -35,4 +35,9 @@ public class TabletopService {
         return  TabletopDAO.findAllTabletops();
     }
 
+    public Tabletop findTabletopByName(String name){
+        return TabletopDAO.findByName(name);
+    }
+
+
 }

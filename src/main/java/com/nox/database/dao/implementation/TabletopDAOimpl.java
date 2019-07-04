@@ -5,6 +5,7 @@ import com.nox.database.dao.interf.TabletopDAO;
 import com.nox.database.entity.Tabletop;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -41,5 +42,14 @@ public class TabletopDAOimpl implements TabletopDAO {
     public List<Tabletop> findAllTabletops (){
         List<Tabletop> tabletops = (List<Tabletop>)  HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery("From Tabletop").list();
         return tabletops;
+    }
+
+    public Tabletop findByName (String tabletopName){
+        Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
+                "FROM Tabletop WHERE name = :tabletopName"
+        );
+        query.setParameter("tabletopName", tabletopName);
+        Tabletop tabletop = (Tabletop) query.uniqueResult();
+        return tabletop;
     }
 }

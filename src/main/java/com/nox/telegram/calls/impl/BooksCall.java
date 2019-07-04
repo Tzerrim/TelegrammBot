@@ -1,10 +1,10 @@
 package com.nox.telegram.calls.impl;
 
-import com.nox.database.dao.interf.BookDAO;
 import com.nox.database.entity.Book;
+import com.nox.database.entity.Tabletop;
 import com.nox.database.service.BookService;
+import com.nox.database.service.TabletopService;
 import com.nox.telegram.calls.api.Call;
-import com.nox.telegram.calls.constants.Constants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,22 +18,25 @@ public class BooksCall implements Call {
 
     public String getResult(String game) {
         logger.info("Books: " + game);
+        BookService bookService = new BookService();
+
         if (null == game){
-            BookService bookService = new BookService();
             List<Book> books = bookService.findAllBooks();
             result = books.stream()
                     .map( n -> n.toDataString() )
                     .collect( Collectors.joining( "\n --- \n" ) );
         }
         else {
+            String tableTopName = game.substring(0,1).toUpperCase() + game.substring(1).toLowerCase();
+            TabletopService tabletopService = new TabletopService();
+            Tabletop tabletop = tabletopService.findTabletopByName(tableTopName);
+            if (tabletop != null){
 
-            if (Constants.PATHFINDER.equals(game.toLowerCase())) {
-
-                BookService bookService = new BookService();
-                List<Book> books = bookService.findBooksByTalbetops(Constants.PATHFINDER );
+                List<Book> books = bookService.findBooksByTalbetops(tabletop.getName());
                 result = books.stream()
                         .map( n -> n.toDataString() )
-                        .collect( Collectors.joining( "\n --- \n"  ) );
+                        .collect( Collectors.joining( "\n --- \n" ) );
+
             }
         }
         return result;

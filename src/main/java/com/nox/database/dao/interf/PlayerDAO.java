@@ -16,6 +16,8 @@ public interface PlayerDAO {
 
     public Player findById(int id);
 
+    public Player findByName(String name);
+
     public List<Player> findAllPlayers();
 
 }

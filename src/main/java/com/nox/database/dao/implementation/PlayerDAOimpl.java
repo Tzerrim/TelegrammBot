@@ -45,4 +45,13 @@ public class PlayerDAOimpl implements PlayerDAO {
         List<Player> players = (List<Player>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Player").list();
         return players;
     }
+
+    public Player findByName(String name){
+        Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
+                "FROM Player WHERE name = :name"
+        );
+        query.setParameter("name", name);
+        Player player= (Player) query.uniqueResult();
+        return player;
+    }
 }

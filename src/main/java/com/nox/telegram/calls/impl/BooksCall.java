@@ -24,19 +24,20 @@ public class BooksCall implements Call {
             List<Book> books = bookService.findAllBooks();
             result = books.stream()
                     .map( n -> n.toDataString() )
-                    .collect( Collectors.joining( "\n --- \n" ) );
+                    .collect( Collectors.joining( " --- " ) );
         }
         else {
             String tableTopName = game.substring(0,1).toUpperCase() + game.substring(1).toLowerCase();
             TabletopService tabletopService = new TabletopService();
             Tabletop tabletop = tabletopService.findTabletopByName(tableTopName);
             if (tabletop != null){
-
                 List<Book> books = bookService.findBooksByTalbetops(tabletop.getName());
                 result = books.stream()
                         .map( n -> n.toDataString() )
-                        .collect( Collectors.joining( "\n --- \n" ) );
-
+                        .collect( Collectors.joining( " --- " ) );
+            }
+            else {
+                result = "I can't help you. Go help yourself!";
             }
         }
         return result;

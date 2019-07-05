@@ -46,6 +46,7 @@ INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Roman Timosuk', 'Oro
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, 'Kirill Kravets', 'VJ Ray' );
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (4, 'Ashley Holmes', 'Ashley' );
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (5, 'Tatsiana Rudaja', 'Itazis' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (6, 'Valeryia Shekhautsova ', 'UNKONOWN' );
 
 -- Characters
 -- Pathfinder Characters
@@ -56,7 +57,18 @@ INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (4, 'Net', 'Shapeshift
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (5, 'Larhon', 'Oread cleric of Saerenrae', 4, 2);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (6, 'Ler Dante', 'Aasimar Iomedae paladin', 1, 2);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (7, 'Morgana', 'Mefolk ranger', 5, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (7, 'Ashata', 'Half-orc barbarian', 6, 2);
 -- Shadowrun Characters
+
+-- Handzo
+-- Damien
+-- Nat
+-- Heckyl
+-- Ametyl
+-- Lynx
+-- Vivier
+-- Thion
+
 
 -- Homerules
 

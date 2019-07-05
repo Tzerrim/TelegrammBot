@@ -24,7 +24,7 @@ public class BooksCall implements Call {
             List<Book> books = bookService.findAllBooks();
             result = books.stream()
                     .map( n -> n.toDataString() )
-                    .collect( Collectors.joining( " --- " ) );
+                    .collect( Collectors.joining( " --- \n" ) );
         }
         else {
             String tableTopName = game.substring(0,1).toUpperCase() + game.substring(1).toLowerCase();
@@ -34,7 +34,7 @@ public class BooksCall implements Call {
                 List<Book> books = bookService.findBooksByTalbetops(tabletop.getName());
                 result = books.stream()
                         .map( n -> n.toDataString() )
-                        .collect( Collectors.joining( " --- " ) );
+                        .collect( Collectors.joining( " --- \n" ) );
             }
             else {
                 result = "I can't help you. Go help yourself!";

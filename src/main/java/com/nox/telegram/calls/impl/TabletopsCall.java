@@ -20,7 +20,7 @@ public class TabletopsCall implements Call {
         List<Tabletop> tabletops = tabletopService.findAllTabletops();
         result = tabletops.stream()
                 .map( n -> n.toDataString() )
-                .collect( Collectors.joining( " --- " ) );
+                .collect( Collectors.joining( " --- \n" ) );
         return result;
     }
 }

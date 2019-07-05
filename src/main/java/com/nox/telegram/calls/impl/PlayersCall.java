@@ -22,7 +22,7 @@ public class PlayersCall implements Call {
             List<Player> playerList = playerService.findAllPlayers();
             result = playerList.stream()
                     .map( n -> n.toDataString() )
-                    .collect( Collectors.joining( " --- " ) );
+                    .collect( Collectors.joining( " --- \n" ) );
         }
         else {
             String playerName = name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();

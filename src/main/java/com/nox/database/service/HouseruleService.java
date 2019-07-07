@@ -1,40 +1,40 @@
 package com.nox.database.service;
 
+import com.nox.database.dao.implementation.HouseruleDAOimpl;
 import com.nox.database.dao.implementation.PlayerDAOimpl;
+import com.nox.database.dao.interf.HouseruleDAO;
 import com.nox.database.dao.interf.PlayerDAO;
+import com.nox.database.entity.Houserule;
 import com.nox.database.entity.Player;
 
 import java.util.List;
 
 public class HouseruleService {
 
-    PlayerDAO playerDAO = new PlayerDAOimpl();
+    HouseruleDAO houseruleDAO = new HouseruleDAOimpl();
 
     public HouseruleService(){
 
     }
 
-    public Player findPlayerById(int id){
-        return playerDAO.findById(id);
+    public Houserule findHouseruleById(int id){
+        return houseruleDAO.findById(id);
     }
 
-    public void savePlayer(Player player){
-        playerDAO.save(player);
+    public void saveHouserule(Houserule houserule){
+        houseruleDAO.save(houserule);
     }
 
-    public void deletePlayer(Player player) {
-        playerDAO.delete(player);
+    public void deleteHouserule(Houserule houserule) {
+        houseruleDAO.delete(houserule);
     }
 
-    public void updateBooks (Player player){
-        playerDAO.update(player);
+    public void updateHouserule (Houserule houserule){
+        houseruleDAO.update(houserule);
     }
 
-    public List<Player> findAllPlayers(){
-        return  playerDAO.findAllPlayers();
+    public List<Houserule> findAllHouserule(){
+        return  houseruleDAO.findAllHouserules();
     }
 
-    public Player findPlayerByName( String name){
-        return  playerDAO.findByName(name);
-    }
 }

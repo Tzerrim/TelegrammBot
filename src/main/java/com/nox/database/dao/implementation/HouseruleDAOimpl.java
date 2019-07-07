@@ -49,7 +49,7 @@ public class HouseruleDAOimpl implements HouseruleDAO {
                 "FROM Houserule " +
                         "WHERE tabletops_id = (" +
                         " SELECT id " +
-                        "   FROM Player " +
+                        "   FROM Tabletop " +
                         "   WHERE name = :tabletopName)"
         );
         query.setParameter("tabletopName", tabletopName);

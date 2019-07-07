@@ -1,6 +1,6 @@
 package com.nox.database.dao.interf;
 
-import com.nox.database.entity.Tabletop;
+import com.nox.database.entity.Character;
 
 import java.util.List;
 
@@ -17,7 +17,9 @@ public interface CharacterDAO {
 
     public List<Character> findAllCharacters();
 
+    public Character findCharacterByName (String name);
+
     public List<Character> findCharactersByTalbetop(String tabletopName);
 
-    public List<Character> findCharactersByPlayer(String tabletopName);
+    public List<Character> findCharactersByPlayer(String playerName);
 }

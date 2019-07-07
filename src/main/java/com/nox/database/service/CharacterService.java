@@ -1,40 +1,49 @@
 package com.nox.database.service;
 
-import com.nox.database.dao.implementation.PlayerDAOimpl;
-import com.nox.database.dao.interf.PlayerDAO;
-import com.nox.database.entity.Player;
+import com.nox.database.dao.implementation.CharacterDAOimpl;
+import com.nox.database.dao.interf.CharacterDAO;
+import com.nox.database.entity.Character;
 
 import java.util.List;
 
 public class CharacterService {
 
-    PlayerDAO playerDAO = new PlayerDAOimpl();
+    CharacterDAO characterDAO = new CharacterDAOimpl();
 
     public CharacterService(){
 
     }
 
-    public Player findPlayerById(int id){
-        return playerDAO.findById(id);
+    public Character findCharacterById(int id){
+        return characterDAO.findById(id);
     }
 
-    public void savePlayer(Player player){
-        playerDAO.save(player);
+    public void saveCharacter(Character character){
+        characterDAO.save(character);
     }
 
-    public void deletePlayer(Player player) {
-        playerDAO.delete(player);
+    public void deleteCharacter(Character character) {
+        characterDAO.delete(character);
     }
 
-    public void updateBooks (Player player){
-        playerDAO.update(player);
+    public void updateCharacter (Character character){
+        characterDAO.update(character);
     }
 
-    public List<Player> findAllPlayers(){
-        return  playerDAO.findAllPlayers();
+    public List<Character> findAllCharacters(){
+        return  characterDAO.findAllCharacters();
     }
 
-    public Player findPlayerByName( String name){
-        return  playerDAO.findByName(name);
+    public Character findCharacterByName( String name){
+        return  characterDAO.findCharacterByName(name);
     }
+
+    public List<Character> findCharacterByTabletop( String tabletopName){
+        return  characterDAO.findCharactersByTalbetop(tabletopName);
+    }
+
+    public List<Character> findCharacterByPlayer(String playerName){
+        return  characterDAO.findCharactersByPlayer(playerName);
+    }
+
 }

@@ -74,4 +74,11 @@ public class Character {
         return sb.toString();
     }
 
+    public String toDataString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.name).append("\n");
+        sb.append(this.description).append("\n");
+        return sb.toString();
+    }
+
 }

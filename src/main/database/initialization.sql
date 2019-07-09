@@ -58,7 +58,7 @@ INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (5, 'Larhon', 'Oread c
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (6, 'Ler Dante', 'Aasimar Iomedae paladin', 1, 2);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (7, 'Morgana', 'Mefolk ranger', 5, 2);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (7, 'Ashata', 'Half-orc barbarian', 6, 2);
--- Shadowrun Characters
+-- My Shadowrun Characters
 
 -- Handzo
 -- Damien
@@ -68,6 +68,8 @@ INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (7, 'Ashata', 'Half-or
 -- Lynx
 -- Vivier
 -- Thion
+
+-- Ashley Shadowrun Characters
 
 
 -- Homerules

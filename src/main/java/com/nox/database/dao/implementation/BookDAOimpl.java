@@ -40,11 +40,6 @@ public class BookDAOimpl implements BookDAO {
     }
 
     public List<Book> findBooksByTalbetop(String tabletopName) {
-//        CriteriaBuilder builder = HibernateSessionFactoryUtil.getSessionFactory().openSession().getCriteriaBuilder();
-//        CriteriaQuery<Book> criteria = builder.createQuery(Book.class);
-//        criteria.from(Book.class);
-//        criteria.where()
-
         Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
                         "FROM Book " +
                         "WHERE tabletops_id = ( " +

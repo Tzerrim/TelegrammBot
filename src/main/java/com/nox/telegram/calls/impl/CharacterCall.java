@@ -44,7 +44,10 @@ public class CharacterCall implements Call {
                 }
             }
         }
-        result = "NO CHARACTER FOUND";
+        List<Character> characters = (List<Character>) characterService.findAllCharacters();
+        result = characters.stream()
+                .map( n -> n.toDataString() )
+                .collect( Collectors.joining( " --- \n" ) );
         return result;
     }
 

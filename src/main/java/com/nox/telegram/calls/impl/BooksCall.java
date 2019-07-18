@@ -5,6 +5,7 @@ import com.nox.database.entity.Tabletop;
 import com.nox.database.service.BookService;
 import com.nox.database.service.TabletopService;
 import com.nox.telegram.calls.api.Call;
+import com.nox.telegram.calls.utils.CommonUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -27,9 +28,8 @@ public class BooksCall implements Call {
                     .collect( Collectors.joining( " --- \n" ) );
         }
         else {
-            String tableTopName = game.substring(0,1).toUpperCase() + game.substring(1).toLowerCase();
             TabletopService tabletopService = new TabletopService();
-            Tabletop tabletop = tabletopService.findTabletopByName(tableTopName);
+            Tabletop tabletop = tabletopService.findTabletopByName(CommonUtils.nameFormatter (game));
             if (tabletop != null){
                 List<Book> books = bookService.findBooksByTalbetops(tabletop.getName());
                 result = books.stream()

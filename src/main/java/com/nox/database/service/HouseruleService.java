@@ -37,4 +37,8 @@ public class HouseruleService {
         return  houseruleDAO.findAllHouserules();
     }
 
+    public List<Houserule> findHouseruleByTabletop( String tabletopName){
+        return  houseruleDAO.findHouserulesByTalbetop(tabletopName);
+    }
+
 }

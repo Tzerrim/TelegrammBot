@@ -1,7 +1,7 @@
 package com.nox.telegram.calls.impl;
 
 import com.nox.telegram.calls.api.Call;
-import com.nox.telegram.calls.constants.Constants;
+import com.nox.telegram.calls.utils.Constants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

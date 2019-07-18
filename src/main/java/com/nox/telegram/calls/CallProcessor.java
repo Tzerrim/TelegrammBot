@@ -4,8 +4,8 @@ import com.nox.telegram.calls.api.Call;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static com.nox.telegram.calls.constants.Constants.CALLS;
-import static com.nox.telegram.calls.constants.Constants.NO_FUNCTION_MESSAGE;
+import static com.nox.telegram.calls.utils.Constants.CALLS;
+import static com.nox.telegram.calls.utils.Constants.NO_FUNCTION_MESSAGE;
 
 public class CallProcessor {
     private static Logger logger =  LogManager.getLogger(CallProcessor.class);

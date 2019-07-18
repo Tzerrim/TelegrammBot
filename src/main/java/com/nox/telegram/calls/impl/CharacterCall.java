@@ -6,6 +6,7 @@ import com.nox.database.service.CharacterService;
 import com.nox.database.service.PlayerService;
 import com.nox.database.service.TabletopService;
 import com.nox.telegram.calls.api.Call;
+import com.nox.telegram.calls.utils.CommonUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import com.nox.database.entity.Character;
@@ -22,7 +23,7 @@ public class CharacterCall implements Call {
         if(null != data && !data.equals("")){
             // First in games
             // Second in players
-            String formattedData =  data.substring(0,1).toUpperCase() + data.substring(1).toLowerCase();
+            String formattedData =  CommonUtils.nameFormatter(data);
             TabletopService tabletopService = new TabletopService();
             Tabletop tabletop = tabletopService.findTabletopByName(formattedData);
             if (tabletop != null){

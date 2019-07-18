@@ -29,6 +29,7 @@ CREATE TABLE characters (
     id INTEGER NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL UNIQUE,
     description VARCHAR(200) NOT NULL,
+    play_status ENUM ('DEAD' , 'INCATIVE', 'ACTIVE') DEFAULT 'ACTIVE',
     player_id INTEGER NOT NULL,
     tabletops_id INTEGER NOT NULL,
     FOREIGN KEY (tabletops_id) REFERENCES tabletops(id),

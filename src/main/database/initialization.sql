@@ -43,12 +43,12 @@ INSERT IGNORE INTO telegram_bot_zathras.books VALUES (31, 'The Assassins Primer'
 INSERT IGNORE INTO telegram_bot_zathras.books VALUES (32, 'The Complete Trog', 'Basic book', 1 );
 
 -- PLAYERS
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (1, 'Stepan Rapinchuk', 'Danstep' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Roman Timosuk', 'Orome' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, 'Kirill Kravets', 'VJ Ray' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (4, 'Ashley Holmes', 'Ashley' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (5, 'Tatsiana Rudaja', 'Itazis' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (6, 'Valeryia Shekhautsova ', 'UNKONOWN' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (1, 'Stepan Rapinchuk', 'Danstep', 'ACTIVE' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Roman Timosuk', 'Orome', 'ACTIVE' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, 'Kirill Kravets', 'VJ Ray', 'ACTIVE' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (4, 'Ashley Holmes', 'Ashley', 'ACTIVE' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (5, 'Tatsiana Rudaja', 'Itazis', 'ACTIVE' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (6, 'Valeryia Shekhautsova ', 'UNKONOWN', 'INCATIVE' );
 
 -- CHARACTERS (ID , Char_name, Description, link to tabletop, link to player)
 -- Pathfinder Characters
@@ -68,7 +68,7 @@ INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (11, 'Nataniel', 'ACTI
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (12, 'Heckyl', 'DEAD' , 'Human Black mage face', 5, 1);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (13, 'Ametyl', 'ACTIVE' , 'Human  mage ', 5, 1);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (14, 'Lynx', 'ACTIVE' , 'Human  decked augumented by DEUS ', 3, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (15, 'Vivier', 'DEAD' , 'Human  wide spectre specialist ', 3, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (15, 'Vivier', 'INACTIVE' , 'Human  wide spectre specialist ', 3, 1);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (16, 'Thion', 'ACTIVE' , 'Elf  fire shaman ', 2, 1);
 
 -- Ashley Shadowrun Characters
@@ -76,4 +76,4 @@ INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (16, 'Thion', 'ACTIVE'
 
 -- HOMERULES
 INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (1, 'Every character got I fix after creation', NULL);
-INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (1, 'Every character got I fix after creation', NULL);
+INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (2, 'Every character got I fix after creation', NULL);

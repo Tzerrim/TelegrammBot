@@ -1,7 +1,9 @@
 package com.nox.database.entity;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "players")
@@ -18,6 +20,7 @@ public class Player {
     private String description;
 
     @OneToMany(targetEntity= Character.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "tabletops_id")
     private List<Character> characters;
 
     public int getId() {
@@ -64,8 +67,12 @@ public class Player {
 
     public String toDataString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(this.name).append("\n");
-        sb.append(this.description).append("\n");
+        sb.append("Player name:\t").append(this.name).append("\n");
+        sb.append("Player description:\t").append(this.description).append("\n");
+
+        sb.append("Player characters:\t").append(this.characters.stream()
+                .map( n -> n.getName() + " ("+n.getTabletop().getName() +")")
+                .collect( Collectors.joining( " , " ) )).append("\n");
         return sb.toString();
     }
 }

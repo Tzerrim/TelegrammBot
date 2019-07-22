@@ -28,7 +28,7 @@ public class Character {
     @Enumerated(EnumType.STRING)
     private CharacterStatus characterStatus;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "tabletops_id")
     private Tabletop tabletop;
 
@@ -95,6 +95,8 @@ public class Character {
         sb.append("Character name:\t").append(this.name).append("\n");
         sb.append("Character description:\t").append(this.description).append("\n");
         sb.append("Character status:\t").append(this.characterStatus).append("\n");
+        sb.append("Tabletop:\t").append(this.tabletop.getName()).append("\n");
+        sb.append("Player:\t").append(this.player.getName()).append("\n");
         return sb.toString();
     }
 

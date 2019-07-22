@@ -19,12 +19,15 @@ public class Tabletop {
     private String description;
 
     @OneToMany(targetEntity= Book.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "tabletops_id")
     private List<Book> books;
 
     @OneToMany(targetEntity= Houserule.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "tabletops_id")
     private List<Houserule> houserules;
 
     @OneToMany(targetEntity= Character.class, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "tabletops_id")
     private List<Character> characters;
 
     public Tabletop(){}
@@ -101,8 +104,8 @@ public class Tabletop {
 
     public String toDataString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(this.name).append("\n");
-        sb.append(this.description).append("\n");
+        sb.append("Tabletop name:\t").append(this.name).append("\n");
+        sb.append("Tabletop description:\t").append(this.description).append("\n");
         return sb.toString();
     }
 }

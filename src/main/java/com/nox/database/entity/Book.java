@@ -73,8 +73,9 @@ public class Book {
 
     public String toDataString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(this.name).append("\n");
-        sb.append(this.description).append("\n");
+        sb.append("Book name:\t").append(this.name).append("\n");
+        sb.append("Book description:\t").append(this.description).append("\n");
+        sb.append("Tabletop:\t").append(this.tabletop.getName()).append("\n");
         return sb.toString();
     }
 }

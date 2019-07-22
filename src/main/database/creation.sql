@@ -38,10 +38,10 @@ CREATE TABLE characters (
 );
 
 -- NOTE: if "tabletops_id" is NULL - means that this houserules is universal to all tabletops
-CREATE TABLE houserules {
+CREATE TABLE houserules (
     id INTEGER NOT NULL AUTO_INCREMENT,
     description VARCHAR(2000) NOT NULL,
     tabletops_id INTEGER NULL,
     FOREIGN KEY (tabletops_id) REFERENCES tabletops(id),
     PRIMARY KEY (id)
-};
+);

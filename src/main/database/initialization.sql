@@ -62,14 +62,14 @@ INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (7, 'Morgana', 'ACTIVE
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (8, 'As`hata', 'ACTIVE' ,'Half-orc barbarian', 6, 2);
 
 -- My Shadowrun Characters
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (9, 'Handzo', 'Human adept street samurai', 1, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (10, 'Damien', 'Human dragon awakened face teamleader', 4, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (11, 'Nataniel', 'Elf augumented sniper-enforcer', 1, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (12, 'Heckyl', 'Human Black mage face', 5, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (13, 'Ametyl', 'Human  mage ', 5, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (14, 'Lynx', 'Human  decked augumented by DEUS ', 3, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (15, 'Vivier', 'Human  wide spectre specialist ', 3, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (16, 'Thion', 'Elf  fire shaman ', 2, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (9, 'Handzo', 'DEAD' , 'Human adept street samurai', 1, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (10, 'Damien', 'ACTIVE' , 'Human dragon awakened face teamleader', 4, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (11, 'Nataniel', 'ACTIVE' , 'Elf augumented sniper-enforcer', 1, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (12, 'Heckyl', 'DEAD' , 'Human Black mage face', 5, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (13, 'Ametyl', 'ACTIVE' , 'Human  mage ', 5, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (14, 'Lynx', 'ACTIVE' , 'Human  decked augumented by DEUS ', 3, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (15, 'Vivier', 'DEAD' , 'Human  wide spectre specialist ', 3, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (16, 'Thion', 'ACTIVE' , 'Elf  fire shaman ', 2, 1);
 
 -- Ashley Shadowrun Characters
 

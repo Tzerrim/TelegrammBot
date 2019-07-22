@@ -22,7 +22,7 @@ CREATE TABLE players (
     id INTEGER NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL UNIQUE,
     description VARCHAR(200) NOT NULL DEFAULT 'UNKNOWN',
-    players_status ENUM ('STOPPED' , 'INCATIVE', 'ACTIVE') DEFAULT 'ACTIVE',
+    players_status VARCHAR(8) DEFAULT 'ACTIVE',
     PRIMARY KEY (id)
 );
 
@@ -30,7 +30,7 @@ CREATE TABLE characters (
     id INTEGER NOT NULL AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL UNIQUE,
     description VARCHAR(200) NOT NULL,
-    play_status ENUM ('DEAD' , 'INCATIVE', 'ACTIVE') DEFAULT 'ACTIVE',
+    character_status  VARCHAR(8) DEFAULT 'ACTIVE',
     player_id INTEGER NOT NULL,
     tabletops_id INTEGER NOT NULL,
     FOREIGN KEY (tabletops_id) REFERENCES tabletops(id),
@@ -41,7 +41,7 @@ CREATE TABLE characters (
 -- NOTE: if "tabletops_id" is NULL - means that this houserules is universal to all tabletops
 CREATE TABLE houserules (
     id INTEGER NOT NULL AUTO_INCREMENT,
-    description VARCHAR(2000) NOT NULL,
+    description TEXT NOT NULL,
     tabletops_id INTEGER NULL,
     FOREIGN KEY (tabletops_id) REFERENCES tabletops(id),
     PRIMARY KEY (id)

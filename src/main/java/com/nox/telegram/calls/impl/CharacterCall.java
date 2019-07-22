@@ -29,7 +29,7 @@ public class CharacterCall implements Call {
             if (tabletop != null){
                 List<Character> characters = (List<Character>) characterService.findCharacterByTabletop(tabletop.getName());
                 result = characters.stream()
-                        .map( n -> n.toDataString() )
+                        .map( n -> n.toDataString())
                         .collect( Collectors.joining( " --- \n" ) );
                 return result;
             }

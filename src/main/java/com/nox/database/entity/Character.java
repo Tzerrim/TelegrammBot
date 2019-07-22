@@ -1,5 +1,9 @@
 package com.nox.database.entity;
 
+import com.nox.database.enums.CharacterStatus;
+import com.nox.database.enums.PlayerStatus;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +23,10 @@ public class Character {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "player_id")
     private Player player;
+
+    @Column(name = "character_status")
+    @Enumerated(EnumType.STRING)
+    private CharacterStatus characterStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tabletops_id")
@@ -64,6 +72,14 @@ public class Character {
         this.tabletop = tabletop;
     }
 
+    public CharacterStatus getCharacterStatus() {
+        return characterStatus;
+    }
+
+    public void setCharacterStatus(CharacterStatus characterStatus) {
+        this.characterStatus = characterStatus;
+    }
+
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
@@ -76,8 +92,9 @@ public class Character {
 
     public String toDataString(){
         StringBuilder sb = new StringBuilder();
-        sb.append(this.name).append("\n");
-        sb.append(this.description).append("\n");
+        sb.append("Character name:\t").append(this.name).append("\n");
+        sb.append("Character description:\t").append(this.description).append("\n");
+        sb.append("Character status:\t").append(this.characterStatus).append("\n");
         return sb.toString();
     }
 

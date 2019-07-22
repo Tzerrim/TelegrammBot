@@ -52,28 +52,31 @@ INSERT IGNORE INTO telegram_bot_zathras.players VALUES (6, 'Valeryia Shekhautsov
 
 -- CHARACTERS (ID , Char_name, Description, link to tabletop, link to player)
 -- Pathfinder Characters
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (1, 'Marcus', 'DEAD' ,'Magus dhampir', 1, 2);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (2, 'Arvin Yrolem', 'ACTIVE' , 'Tiefling infernal sorcerer', 2, 2);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (3, 'Wilheml', 'INACTIVE' ,'Human oracle of life', 3, 2);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (4, 'Net', 'ACTIVE' ,'Shapeshifter swashbuckler', 3, 2);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (5, 'Larhon', 'ACTIVE' ,'Oread cleric of Saerenrae', 4, 2);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (6, 'Ler Dante', 'DEAD' , 'Aasimar Iomedae paladin', 1, 2);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (7, 'Morgana', 'ACTIVE' ,'Mefolk ranger', 5, 2);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (8, 'As`hata', 'ACTIVE' ,'Half-orc barbarian', 6, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (1, 'Marcus', 'Magus dhampir','DEAD' , 1, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (2, 'Arvin Yrolem','Tiefling infernal sorcerer', 'ACTIVE' ,  2, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (3, 'Wilheml', 'Human oracle of life', 'INACTIVE', 3, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (4, 'Net', 'Shapeshifter swashbuckler', 'ACTIVE' ,3, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (5, 'Larhon', 'Oread cleric of Saerenrae','ACTIVE' , 4, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (6, 'Ler Dante','Aasimar Iomedae paladin', 'DEAD' , 1, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (7, 'Morgana', 'Mefolk ranger', 'ACTIVE' , 5, 2);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (8, 'As`hata', 'Half-orc barbarian', 'INACTIVE' ,6, 2);
 
 -- My Shadowrun Characters
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (9, 'Handzo', 'DEAD' , 'Human adept street samurai', 1, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (10, 'Damien', 'ACTIVE' , 'Human dragon awakened face teamleader', 4, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (11, 'Nataniel', 'ACTIVE' , 'Elf augumented sniper-enforcer', 1, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (12, 'Heckyl', 'DEAD' , 'Human Black mage face', 5, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (13, 'Ametyl', 'ACTIVE' , 'Human  mage ', 5, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (14, 'Lynx', 'ACTIVE' , 'Human  decked augumented by DEUS ', 3, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (15, 'Vivier', 'INACTIVE' , 'Human  wide spectre specialist ', 3, 1);
-INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (16, 'Thion', 'ACTIVE' , 'Elf  fire shaman ', 2, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (9, 'Handzo',  'Human adept street samurai', 'DEAD' , 1, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (10, 'Damien',  'Human dragon awakened face teamleader', 'ACTIVE' , 4, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (11, 'Nataniel',  'Elf augumented sniper-enforcer', 'ACTIVE' ,1, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (12, 'Heckyl',  'Human Black mage face', 'DEAD' ,5, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (13, 'Ametyl',  'Human  mage ', 'ACTIVE' ,5, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (14, 'Lynx',  'Human  decked augumented by DEUS ', 'ACTIVE' , 3, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (15, 'Vivier',  'Human  wide spectre specialist ', 'INACTIVE' , 3, 1);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (16, 'Thion',  'Elf  fire shaman ', 'ACTIVE' ,2, 1);
 
 -- Ashley Shadowrun Characters
 
 
 -- HOMERULES
-INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (1, 'Every character got I fix after creation', NULL);
-INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (2, 'Every character got I fix after creation', NULL);
+INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (1, 'Every character got 1 fix after creation', NULL);
+INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (2, 'Every character starts with trait PATHFINDER_TRINING: +10HP, +1 to all skill checks', 2);
+INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (3, 'At character creation NOT ALLOWED to create a HUMAN race character', 2);
+INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (4, 'At character creation NOT ALLOWED to create an EVIL-alignment character', 2);
+

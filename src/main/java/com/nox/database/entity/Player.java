@@ -20,7 +20,7 @@ public class Player {
     private String description;
 
     @OneToMany(targetEntity= Character.class, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "tabletops_id")
+    @JoinColumn(name = "player_id")
     private List<Character> characters;
 
     public int getId() {

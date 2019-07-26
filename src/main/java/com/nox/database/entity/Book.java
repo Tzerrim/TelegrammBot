@@ -1,10 +1,12 @@
 package com.nox.database.entity;
 
+import com.nox.database.api.entityApi;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "books")
-public class Book {
+public class Book implements entityApi {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

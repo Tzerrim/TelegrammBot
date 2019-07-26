@@ -1,5 +1,6 @@
 package com.nox.database.entity;
 
+import com.nox.database.api.entityApi;
 import com.nox.database.enums.CharacterStatus;
 import com.nox.database.enums.PlayerStatus;
 import org.hibernate.annotations.Type;
@@ -8,7 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "characters")
-public class Character {
+public class Character implements entityApi {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

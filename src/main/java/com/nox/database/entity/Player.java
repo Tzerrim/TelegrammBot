@@ -1,5 +1,7 @@
 package com.nox.database.entity;
 
+import com.nox.database.api.entityApi;
+
 import javax.persistence.*;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "players")
-public class Player {
+public class Player implements entityApi {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

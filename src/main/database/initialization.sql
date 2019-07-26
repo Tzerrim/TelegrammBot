@@ -72,7 +72,9 @@ INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (15, 'Vivier',  'Human
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (16, 'Thion',  'Elf  fire shaman ', 'ACTIVE' , 2, 1);
 
 -- Ashley Shadowrun Characters
-
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (17, 'Chow-Chow',  'Oni bodyguard', 'ACTIVE' , 2, 5);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (18, 'Axel',  'Well known strip-dancer', 'ACTIVE' , 5, 5);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (19, 'Handzo',  'Human mystic adept street samurai', 'ACTIVE' , 1, 5);
 
 -- HOMERULES
 INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (1, 'Every character got 1 fix after creation', NULL);

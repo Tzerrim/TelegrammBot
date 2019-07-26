@@ -1,10 +1,12 @@
 package com.nox.database.entity;
 
+import com.nox.database.api.entityApi;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "houserules")
-public class Houserule {
+public class Houserule implements entityApi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -46,6 +48,13 @@ public class Houserule {
         sb.append("Houserule entity: ").append("\n");
         sb.append("id: ").append(this.id).append("\n");
         sb.append("description: ").append(this.description).append("\n");
+        return sb.toString();
+    }
+
+    public String toDataString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Tabletop:\t").append(this.tabletop.getName()).append("\n");
+        sb.append("Houserule test: description:\t").append(this.description).append("\n");
         return sb.toString();
     }
 }

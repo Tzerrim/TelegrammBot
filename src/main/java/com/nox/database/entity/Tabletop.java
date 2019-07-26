@@ -1,11 +1,13 @@
 package com.nox.database.entity;
 
+import com.nox.database.api.entityApi;
+
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "tabletops")
-public class Tabletop {
+public class Tabletop implements entityApi {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -66,7 +68,6 @@ public class Tabletop {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     public List<Book> getBooks() {
         return books;

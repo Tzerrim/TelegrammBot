@@ -4,6 +4,7 @@ INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (2,'Pathfinder', 'Pathf
 INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (3,'Earth dawn', '3-d Edition');
 INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (4,'Travaller', '2-nd edition');
 INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (5,'Shadowrun Ashley', 'Shadowrun 5-th edition');
+INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (6,'Shadowrun OnDay Run 22 SEP 2019', 'Shadowrun 5-th edition');
 
 -- BOOKS
 -- Pathfinder books
@@ -48,7 +49,9 @@ INSERT IGNORE INTO telegram_bot_zathras.players VALUES (2, 'Roman Timosuk', 'Oro
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (3, 'Kirill Kravets', 'VJ Ray', 'ACTIVE' );
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (4, 'Ashley Holmes', 'Ashley', 'ACTIVE' );
 INSERT IGNORE INTO telegram_bot_zathras.players VALUES (5, 'Tatsiana Rudaja', 'Itazis', 'ACTIVE' );
-INSERT IGNORE INTO telegram_bot_zathras.players VALUES (6, 'Valeryia Shekhautsova ', 'UNKONOWN', 'INCATIVE' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (6, 'Valeryia Shekhautsova ', 'UNKONOWN', 'INACTIVE' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (7, 'Yulia Bunas ', 'UNKONOWN', 'ACTIVE' );
+INSERT IGNORE INTO telegram_bot_zathras.players VALUES (8, 'Tigran Antonian ', 'UNKONOWN', 'ACTIVE' );
 
 -- CHARACTERS (ID , Char_name, Description, link to tabletop, link to player)
 -- Pathfinder Characters
@@ -75,10 +78,13 @@ INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (16, 'Thion',  'Elf  f
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (17, 'Chow-Chow',  'Oni bodyguard', 'ACTIVE' , 2, 5);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (18, 'Axel',  'Well known strip-dancer', 'ACTIVE' , 5, 5);
 INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (19, 'Handzo',  'Human mystic adept street samurai', 'ACTIVE' , 1, 5);
+INSERT IGNORE INTO telegram_bot_zathras.characters VALUES (19, 'Ester',  'Nocturna  adept wide spectred sniper', 'ACTIVE' , 3, 5);
+
+-- One Day 21-09-19 Run
 
 -- HOMERULES
 INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (1, 'Every character got 1 fix after creation', NULL);
-INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (2, 'Every character starts with trait PATHFINDER_TRINING: +10HP, +1 to all skill checks', 2);
+INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (2, 'Every character starts with trait PATHFINDER_TRAINING: +10HP, +1 to all skill checks', 2);
 INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (3, 'At character creation NOT ALLOWED to create a HUMAN race character', 2);
 INSERT IGNORE INTO telegram_bot_zathras.houserules VALUES (4, 'At character creation NOT ALLOWED to create an EVIL-alignment character', 2);
 

@@ -19,8 +19,8 @@
 
 ## TODO
 1. Telegram bot part:
-* Answer commands
-* Notify about events and changes
+* Notify about events and changes in VK GROUP
+* API to add record to DB via Teletgam
 2. VK part: 
 * Get data from VK page and send it to Teletgam part
 * In future to post info on commynity wall

@@ -1,10 +1,7 @@
 package com.nox.database.service;
 
-import com.nox.database.dao.implementation.BookDAOimpl;
 import com.nox.database.dao.implementation.PlayerDAOimpl;
-import com.nox.database.dao.interf.BookDAO;
-import com.nox.database.dao.interf.PlayerDAO;
-import com.nox.database.entity.Book;
+import com.nox.database.dao.api.PlayerDAO;
 import com.nox.database.entity.Player;
 
 import java.util.List;

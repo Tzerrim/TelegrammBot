@@ -1,7 +1,7 @@
 package com.nox.database.dao.implementation;
 
 import com.nox.database.HibernateSessionFactoryUtil;
-import com.nox.database.dao.interf.BookDAO;
+import com.nox.database.dao.api.BookDAO;
 import com.nox.database.entity.Book;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

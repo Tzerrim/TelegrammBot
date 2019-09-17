@@ -1,7 +1,7 @@
 package com.nox.database.dao.implementation;
 
 import com.nox.database.HibernateSessionFactoryUtil;
-import com.nox.database.dao.interf.HouseruleDAO;
+import com.nox.database.dao.api.HouseruleDAO;
 import com.nox.database.entity.Houserule;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

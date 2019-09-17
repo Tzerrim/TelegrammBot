@@ -1,6 +1,5 @@
-package com.nox.database.dao.interf;
+package com.nox.database.dao.api;
 
-import com.nox.database.entity.Book;
 import com.nox.database.entity.Player;
 
 import java.util.List;

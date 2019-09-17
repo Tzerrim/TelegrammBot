@@ -2,7 +2,7 @@ package com.nox.database.service;
 
 import com.nox.database.dao.implementation.TabletopDAOimpl;
                                            
-import com.nox.database.dao.interf.TabletopDAO;
+import com.nox.database.dao.api.TabletopDAO;
 import com.nox.database.entity.Tabletop;
 
 import java.util.List;

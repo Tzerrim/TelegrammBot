@@ -1,7 +1,7 @@
 package com.nox.database.dao.implementation;
 
 import com.nox.database.HibernateSessionFactoryUtil;
-import com.nox.database.dao.interf.TabletopDAO;
+import com.nox.database.dao.api.TabletopDAO;
 import com.nox.database.entity.Tabletop;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

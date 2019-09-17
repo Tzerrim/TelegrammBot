@@ -1,11 +1,8 @@
 package com.nox.database.service;
 
 import com.nox.database.dao.implementation.HouseruleDAOimpl;
-import com.nox.database.dao.implementation.PlayerDAOimpl;
-import com.nox.database.dao.interf.HouseruleDAO;
-import com.nox.database.dao.interf.PlayerDAO;
+import com.nox.database.dao.api.HouseruleDAO;
 import com.nox.database.entity.Houserule;
-import com.nox.database.entity.Player;
 
 import java.util.List;
 

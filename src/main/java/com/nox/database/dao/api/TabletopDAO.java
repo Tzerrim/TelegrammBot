@@ -1,4 +1,4 @@
-package com.nox.database.dao.interf;
+package com.nox.database.dao.api;
 
 import com.nox.database.entity.Tabletop;
 

@@ -4,7 +4,7 @@ INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (2,'Pathfinder', 'Pathf
 INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (3,'Earth dawn', '3-d Edition');
 INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (4,'Travaller', '2-nd edition');
 INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (5,'Shadowrun Ashley', 'Shadowrun 5-th edition');
-INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (6,'Shadowrun OnDay Run 22 SEP 2019', 'Shadowrun 5-th edition');
+INSERT IGNORE INTO telegram_bot_zathras.tabletops VALUES (6,'Shadowrun OnDay Run 28 SEP 2019', 'Shadowrun 5-th edition');
 
 -- BOOKS
 -- Pathfinder books

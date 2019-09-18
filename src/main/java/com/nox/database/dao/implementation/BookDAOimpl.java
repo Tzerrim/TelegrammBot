@@ -42,10 +42,10 @@ public class BookDAOimpl implements BookDAO {
     public List<Book> findBooksByTalbetop(String tabletopName) {
         Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
                         "FROM Book " +
-                        "WHERE tabletops_id = ( " +
-                            "SELECT id " +
-                            "FROM Tabletop " +
-                            "WHERE name = :tabletopName)"
+                            "WHERE tabletops_id = ( " +
+                                "SELECT id " +
+                                "FROM Tabletop " +
+                                "WHERE name = :tabletopName)"
         );
         query.setParameter("tabletopName", tabletopName);
         List<Book> books = ( List<Book>) query.list();

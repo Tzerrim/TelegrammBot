@@ -1,14 +1,13 @@
 package com.nox.database.service;
 
 import com.nox.database.dao.implementation.HouseruleDAOimpl;
-import com.nox.database.dao.api.HouseruleDAO;
 import com.nox.database.entity.Houserule;
 
 import java.util.List;
 
 public class HouseruleService {
 
-    HouseruleDAO houseruleDAO = new HouseruleDAOimpl();
+    HouseruleDAOimpl houseruleDAO = new HouseruleDAOimpl();
 
     public HouseruleService(){
 
@@ -31,7 +30,7 @@ public class HouseruleService {
     }
 
     public List<Houserule> findAllHouserule(){
-        return  houseruleDAO.findAllHouserules();
+        return  houseruleDAO.findAll();
     }
 
     public List<Houserule> findHouseruleByTabletop( String tabletopName){

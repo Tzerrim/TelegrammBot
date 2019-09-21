@@ -1,15 +1,14 @@
 package com.nox.database.service;
 
 import com.nox.database.dao.implementation.TabletopDAOimpl;
-                                           
-import com.nox.database.dao.api.TabletopDAO;
+
 import com.nox.database.entity.Tabletop;
 
 import java.util.List;
 
 public class TabletopService {
 
-    TabletopDAO TabletopDAO = new TabletopDAOimpl();
+    TabletopDAOimpl TabletopDAO = new TabletopDAOimpl();
 
     public TabletopService(){
 
@@ -32,7 +31,7 @@ public class TabletopService {
     }
 
     public List<Tabletop> findAllTabletops(){
-        return  TabletopDAO.findAllTabletops();
+        return  TabletopDAO.findAll();
     }
 
     public Tabletop findTabletopByName(String name){

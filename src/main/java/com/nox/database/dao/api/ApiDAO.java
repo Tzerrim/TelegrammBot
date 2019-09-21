@@ -8,9 +8,6 @@ import org.hibernate.Transaction;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-/**
- * TODO: think about JAVA generics!
- */
 public abstract class ApiDAO<T> {
 
     private Class<T> entityType;
@@ -50,7 +47,7 @@ public abstract class ApiDAO<T> {
     }
 
     public List<T> findAll() {
-        List<T> result = (List<T>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM " + entityType).list();
+        List<T> result = (List<T>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM " + entityType.getName()).list();
         return result;
     }
 

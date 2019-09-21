@@ -1,14 +1,13 @@
 package com.nox.database.service;
 
 import com.nox.database.dao.implementation.BookDAOimpl;
-import com.nox.database.dao.api.BookDAO;
 import com.nox.database.entity.Book;
 
 import java.util.List;
 
 public class BookService {
 
-    BookDAO bookDAO = new BookDAOimpl();
+    BookDAOimpl bookDAO = new BookDAOimpl();
 
     public BookService(){
 
@@ -31,7 +30,7 @@ public class BookService {
     }
 
     public List<Book> findAllBooks(){
-        return  bookDAO.findAllBooks();
+        return  bookDAO.findAll();
     }
 
     public List<Book> findBooksByTalbetops( String tabletopName){

@@ -1,14 +1,13 @@
 package com.nox.database.service;
 
 import com.nox.database.dao.implementation.CharacterDAOimpl;
-import com.nox.database.dao.api.CharacterDAO;
 import com.nox.database.entity.Character;
 
 import java.util.List;
 
 public class CharacterService {
 
-    CharacterDAO characterDAO = new CharacterDAOimpl();
+    CharacterDAOimpl characterDAO = new CharacterDAOimpl();
 
     public CharacterService(){
 
@@ -31,7 +30,7 @@ public class CharacterService {
     }
 
     public List<Character> findAllCharacters(){
-        return  characterDAO.findAllCharacters();
+        return  characterDAO.findAll();
     }
 
     public Character findCharacterByName( String name){

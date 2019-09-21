@@ -1,14 +1,13 @@
 package com.nox.database.service;
 
 import com.nox.database.dao.implementation.PlayerDAOimpl;
-import com.nox.database.dao.api.PlayerDAO;
 import com.nox.database.entity.Player;
 
 import java.util.List;
 
 public class PlayerService {
 
-    PlayerDAO playerDAO = new PlayerDAOimpl();
+    PlayerDAOimpl playerDAO = new PlayerDAOimpl();
 
     public PlayerService(){
 
@@ -31,7 +30,7 @@ public class PlayerService {
     }
 
     public List<Player> findAllPlayers(){
-        return  playerDAO.findAllPlayers();
+        return  playerDAO.findAll();
     }
 
     public Player findPlayerByName( String name){

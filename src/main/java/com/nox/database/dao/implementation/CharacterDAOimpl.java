@@ -1,45 +1,15 @@
 package com.nox.database.dao.implementation;
 
 import com.nox.database.HibernateSessionFactoryUtil;
-import com.nox.database.dao.api.CharacterDAO;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import com.nox.database.dao.api.ApiDAO;
 import org.hibernate.query.Query;
 import com.nox.database.entity.Character;
 
 import java.util.List;
 
-public class CharacterDAOimpl implements CharacterDAO {
+public class CharacterDAOimpl extends ApiDAO<Character> {
 
-    public void save(Character character) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.save(character);
-        tx1.commit();
-        session.close();
-    }
-
-    public void update(Character character) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.update(character);
-        tx1.commit();
-        session.close();
-    }
-
-    public void delete(Character character) {
-        Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
-        Transaction tx1 = session.beginTransaction();
-        session.delete(character);
-        tx1.commit();
-        session.close();
-    }
-
-    public Character findById(int id) {
-        return HibernateSessionFactoryUtil.getSessionFactory().openSession().get(Character.class, id);
-    }
-
-    public List<Character> findCharactersByTalbetop(String tabletopName) {
+       public List<Character> findCharactersByTalbetop(String tabletopName) {
         Query query = HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(
                         "FROM Character " +
                         "WHERE tabletops_id = (" +
@@ -62,11 +32,6 @@ public class CharacterDAOimpl implements CharacterDAO {
         );
         query.setParameter("playerName ", playerName);
         List<Character> characters = ( List<Character>) query.list();
-        return characters;
-    }
-
-    public List<Character> findAllCharacters() {
-        List<Character> characters = (List<Character>) HibernateSessionFactoryUtil.getSessionFactory().openSession().createQuery(" FROM Character").list();
         return characters;
     }
 
